@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?><?xml-stylesheet type="text/xml" href="/feed.xslt.xml"?><feed xmlns="http://www.w3.org/2005/Atom"><generator uri="http://jekyllrb.com" version="3.3.1">Jekyll</generator><link href="/feed.xml" rel="self" type="application/atom+xml" /><link href="/" rel="alternate" type="text/html" /><updated>2017-07-18T07:06:52+00:00</updated><id>//</id><title type="html">ThoughtWorks</title><subtitle>DeepLearning.scala by ThougthWorks</subtitle><entry><title type="html">Announcing DeepLearning.scala 2.0.0-RC1</title><link href="/2017/07/03/Announcing-DeepLearning.scala-2.0.0-RC1.html" rel="alternate" type="text/html" title="Announcing DeepLearning.scala 2.0.0-RC1" /><published>2017-07-03T00:00:00+00:00</published><updated>2017-07-03T00:00:00+00:00</updated><id>/2017/07/03/Announcing-DeepLearning.scala-2.0.0-RC1</id><content type="html" xml:base="/2017/07/03/Announcing-DeepLearning.scala-2.0.0-RC1.html">&lt;p&gt;Today, we are happy to announce DeepLearning.scala 2.0.0-RC1, a release candidate of DeepLearning.scala 2.&lt;/p&gt;
+
+&lt;p&gt;DeepLearning.scala 2.0 comes with two major features in addition to DeepLearning.scala 1.0: dynamic neural networks and &lt;a href=&quot;https://javadoc.io/page/com.thoughtworks.feature/factory_2.11/latest/com/thoughtworks/feature/Factory.html&quot;&gt;Factory&lt;/a&gt;-based plugins.&lt;/p&gt;
+
+&lt;p&gt;In DeepLearning.scala 2.0, a neural network is an ordinary Scala function that returns a &lt;a href=&quot;https://javadoc.io/page/com.thoughtworks.deeplearning/plugins-builtins_2.11/latest/com/thoughtworks/deeplearning/plugins/Layers$Layer.html&quot;&gt;Layer&lt;/a&gt;, which represents the process that dynamically creates computational graph nodes, instead of static computational graphs in TensorFlow or some other deep learning frameworks. All Scala features, including functions and expressions, are available in DeepLearning.scala’s dynamic neural networks.&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;Factory&lt;/code&gt;-based plugins resolve &lt;a href=&quot;https://en.wikipedia.org/wiki/Expression_problem&quot;&gt;expression problem&lt;/a&gt;. Any hyperparameters, neural network optimization algorithms or special subnetworks are reusable in the simple &lt;code class=&quot;highlighter-rouge&quot;&gt;Factory[YouPlugin1 with YouPlugin2]&lt;/code&gt; mechanism.&lt;/p&gt;
+
+&lt;p&gt;See &lt;a href=&quot;http://deeplearning.thoughtworks.school/demo/2.0.0-Preview/GettingStarted.html&quot;&gt;Getting Started&lt;/a&gt; to have a try.&lt;/p&gt;
+
+&lt;h3 id=&quot;links&quot;&gt;Links&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;http://deeplearning.thoughtworks.school/&quot;&gt;DeepLearning.scala homepage&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/ThoughtWorksInc/DeepLearning.scala/&quot;&gt;DeepLearning.scala on Github&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;http://deeplearning.thoughtworks.school/demo/2.0.0-Preview/GettingStarted.html&quot;&gt;Getting Started for DeepLearning.scala 2.0&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://javadoc.io/page/com.thoughtworks.deeplearning/deeplearning_2.11/latest/com/thoughtworks/deeplearning/package.html&quot;&gt;Scaladoc&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://javadoc.io/page/com.thoughtworks.feature/factory_2.11/latest/com/thoughtworks/feature/Factory.html&quot;&gt;Factory&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;</content><summary type="html">Today, we are happy to announce DeepLearning.scala 2.0.0-RC1, a release candidate of DeepLearning.scala 2.</summary></entry><entry><title type="html">Announcing DeepLearning.scala 1.0.0</title><link href="/2017/03/28/Announcing-DeepLearning.scala-1.0.0.html" rel="alternate" type="text/html" title="Announcing DeepLearning.scala 1.0.0" /><published>2017-03-28T00:00:00+00:00</published><updated>2017-03-28T00:00:00+00:00</updated><id>/2017/03/28/Announcing-DeepLearning.scala-1.0.0</id><content type="html" xml:base="/2017/03/28/Announcing-DeepLearning.scala-1.0.0.html">&lt;p&gt;Version 1.0.0 is the first stable release of &lt;a href=&quot;http://deeplearning.thoughtworks.school/&quot;&gt;DeepLearning.scala&lt;/a&gt;, a simple language for creating complex neural networks.&lt;/p&gt;
+
+&lt;p&gt;Along with the library, we created &lt;a href=&quot;http://deeplearning.thoughtworks.school/doc/&quot;&gt;a series of tutorials&lt;/a&gt; for developers who want to learn deep learning algorithms.&lt;/p&gt;
+
+&lt;h2 id=&quot;features-in-100&quot;&gt;Features in 1.0.0&lt;/h2&gt;
+
+&lt;h3 id=&quot;differentiable-basic-types&quot;&gt;Differentiable basic types&lt;/h3&gt;
+
+&lt;p&gt;Like &lt;a href=&quot;http://deeplearning.net/software/theano/&quot;&gt;Theano&lt;/a&gt; and other deep learning toolkits, DeepLearning.scala allows you to build neural networks from mathematical formulas. It supports &lt;a href=&quot;https://javadoc.io/page/com.thoughtworks.deeplearning/unidoc_2.11/latest/com/thoughtworks/deeplearning/DifferentiableFloat$.html&quot;&gt;float&lt;/a&gt;s, &lt;a href=&quot;https://javadoc.io/page/com.thoughtworks.deeplearning/unidoc_2.11/latest/com/thoughtworks/deeplearning/DifferentiableDouble$.html&quot;&gt;double&lt;/a&gt;s, &lt;a href=&quot;https://javadoc.io/page/com.thoughtworks.deeplearning/unidoc_2.11/latest/com/thoughtworks/deeplearning/DifferentiableINDArray$.html&quot;&gt;GPU-accelerated N-dimensional array&lt;/a&gt;s, and calculates derivatives of the weights in the formulas.&lt;/p&gt;
+
+&lt;h3 id=&quot;differentiable-adts&quot;&gt;Differentiable ADTs&lt;/h3&gt;
+
+&lt;p&gt;Neural networks created by DeepLearning.scala support &lt;a href=&quot;https://en.wikipedia.org/wiki/Algebraic_data_type&quot;&gt;ADT&lt;/a&gt; data structures (e.g. &lt;a href=&quot;https://javadoc.io/page/com.thoughtworks.deeplearning/unidoc_2.11/latest/com/thoughtworks/deeplearning/DifferentiableHList$.html&quot;&gt;HList&lt;/a&gt; and &lt;a href=&quot;https://javadoc.io/page/com.thoughtworks.deeplearning/unidoc_2.11/latest/com/thoughtworks/deeplearning/DifferentiableCoproduct$.html&quot;&gt;Coproduct&lt;/a&gt;), and calculate derivatives through these data structures.&lt;/p&gt;
+
+&lt;h3 id=&quot;differentiable-control-flow&quot;&gt;Differentiable control flow&lt;/h3&gt;
+
+&lt;p&gt;Neural networks created by DeepLearning.scala may contains control flows like &lt;code class=&quot;highlighter-rouge&quot;&gt;if&lt;/code&gt;/&lt;code class=&quot;highlighter-rouge&quot;&gt;else&lt;/code&gt;/&lt;code class=&quot;highlighter-rouge&quot;&gt;match&lt;/code&gt;/&lt;code class=&quot;highlighter-rouge&quot;&gt;case&lt;/code&gt; in a regular language. Combined with ADT data structures, you can implement arbitary algorithms inside neural networks, and still keep some of the variables used in the algorithms differentiable and trainable.&lt;/p&gt;
+
+&lt;h3 id=&quot;composability&quot;&gt;Composability&lt;/h3&gt;
+
+&lt;p&gt;Neural networks created by DeepLearning.scala are composable. You can create large networks by combining smaller networks. If two larger networks share some sub-networks, the weights in shared sub-networks trained with one network affect the other network.&lt;/p&gt;
+
+&lt;h3 id=&quot;static-type-system&quot;&gt;Static type system&lt;/h3&gt;
+
+&lt;p&gt;All of the above features are statically type checked.&lt;/p&gt;
+
+&lt;h2 id=&quot;links&quot;&gt;Links&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://thoughtworksinc.github.io/DeepLearning.scala/doc/&quot;&gt;Tutorials&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://javadoc.io/page/com.thoughtworks.deeplearning/unidoc_2.11/latest/com/thoughtworks/deeplearning/package.html&quot;&gt;Scaladoc&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://gitter.im/ThoughtWorksInc/DeepLearning.scala&quot;&gt;Chat room&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;acknowledges&quot;&gt;Acknowledges&lt;/h2&gt;
+
+&lt;p&gt;DeepLearning.scala is heavily inspired by &lt;a href=&quot;https://github.com/MarisaKirisame&quot;&gt;@MarisaKirisame&lt;/a&gt;. Originally, we worked together for a prototype of deep learning framework, then we split our work aprt to this project and &lt;a href=&quot;https://github.com/ThoughtWorksInc/DeepDarkFantasy&quot;&gt;DeepDarkFantasy&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://github.com/milessabin&quot;&gt;@milessabin&lt;/a&gt;’s &lt;a href=&quot;https://github.com/milessabin/shapeless&quot;&gt;shapeless&lt;/a&gt; provides a solid foundation for type-level programming as used in DeepLearning.scala.&lt;/p&gt;</content><summary type="html">Version 1.0.0 is the first stable release of DeepLearning.scala, a simple language for creating complex neural networks.</summary></entry></feed>
